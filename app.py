@@ -110,7 +110,7 @@ tickers = st.sidebar.multiselect(
 start_date = st.sidebar.date_input("Backtest Start Date", value=pd.to_datetime("2025-06-01"),
     key="backtest_start_date")
 run_button = st.sidebar.button("Run Backtest",
-        key="rub_backtest_button")
+        key="run_backtest_button")
 
 def backtest_strategy(ticker, start_date):
     df = yf.Ticker(ticker).history(
