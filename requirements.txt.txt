@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 streamlit
 yfinance
 pandas
+=======
+streamlit
+yfinance
+pandas
+>>>>>>> c9922f9 (Add streamlit app and requirements)
