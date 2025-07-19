@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import streamlit as st
 import yfinance as yf
 import pandas as pd
@@ -88,7 +87,6 @@ if run_button:
         st.subheader("Backtest Details")
         st.dataframe(df_res)
 
-=======
 import streamlit as st
 import yfinance as yf
 import pandas as pd
@@ -177,5 +175,3 @@ if run_button:
         st.write(summary)
         st.subheader("Backtest Details")
         st.dataframe(df_res)
-
->>>>>>> c9922f9 (Add streamlit app and requirements)
