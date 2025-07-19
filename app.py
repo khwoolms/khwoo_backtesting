@@ -173,6 +173,19 @@ def backtest_strategy(ticker, start_date):
     }
     return result, summary
 
+n_backtests = st.sidebar.number_input(
+    "Number of backtests",
+    min_value=1,
+    max_value=10,
+    value=1,
+    step=1,
+    key="num_backtests"
+)
+
+for i in range(n_backtests):
+    # 백테스트 실행 코드
+    st.write(f"Running backtest #{i+1}")
+
 for i in range(n_backtests):
     btn = st.sidebar.button(
         f"Run Backtest {i+1}",
