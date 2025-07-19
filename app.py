@@ -9,7 +9,7 @@ st.title("Multi-Ticker Backtest App")
 tickers = st.sidebar.multiselect(
     "Select Tickers",
     options=["BITU", "SOXL", "TQQQ", "465610.KS"],
-    default=["BITU", "SOXL", "TQQQ", "465610.KS"]
+    default=["BITU", "SOXL", "TQQQ", "465610.KS"],
     key="ticker_selector"
 )
 start_date = st.sidebar.date_input("Backtest Start Date", value=pd.to_datetime("2025-06-01"))
