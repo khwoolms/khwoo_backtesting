@@ -109,7 +109,8 @@ tickers = st.sidebar.multiselect(
 )
 start_date = st.sidebar.date_input("Backtest Start Date", value=pd.to_datetime("2025-06-01"),
     key="backtest_start_date")
-run_button = st.sidebar.button("Run Backtest")
+run_button = st.sidebar.button("Run Backtest",
+        key="rub_backtest_button")
 
 def backtest_strategy(ticker, start_date):
     df = yf.Ticker(ticker).history(
@@ -171,6 +172,14 @@ def backtest_strategy(ticker, start_date):
         "Total Return %": ((position * result["close"].iloc[-1] - cost_basis) / cost_basis * 100) if cost_basis > 0 else 0
     }
     return result, summary
+
+for i in range(n_backtests):
+    btn = st.sidebar.button(
+        f"Run Backtest {i+1}",
+        key=f"run_button_{i}"
+    )
+    if btn:
+        run_backtest(i)
 
 if run_button:
     for ticker in tickers:
