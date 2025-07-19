@@ -96,12 +96,19 @@ from datetime import datetime
 st.title("Multi-Ticker Backtest App")
 
 # ── Sidebar: User inputs ──
+for name in ["start", "end"]:
+    st.sidebar.date_input(
+        f"{name.capitalize()} Date",
+        key=f"date_{name}"
+    )
+
 tickers = st.sidebar.multiselect(
     "Select Tickers",
     options=["BITU", "SOXL", "TQQQ", "465610.KS"],
     default=["BITU", "SOXL", "TQQQ", "465610.KS"]
 )
-start_date = st.sidebar.date_input("Backtest Start Date", value=pd.to_datetime("2025-06-01"))
+start_date = st.sidebar.date_input("Backtest Start Date", value=pd.to_datetime("2025-06-01"),
+    key="backtest_start_date")
 run_button = st.sidebar.button("Run Backtest")
 
 def backtest_strategy(ticker, start_date):
